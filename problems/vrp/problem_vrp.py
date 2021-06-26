@@ -156,12 +156,16 @@ def make_instance(args):
     grid_size = 1
     if len(args) > 0:
         depot_types, customer_types, grid_size = args
+    # print({
+    #     'loc': torch.tensor(loc, dtype=torch.float) / grid_size,
+    #     'demand': torch.tensor(demand, dtype=torch.float) / capacity,
+    #     'depot': torch.tensor(depot, dtype=torch.float) / grid_size
+    # })
     return {
         'loc': torch.tensor(loc, dtype=torch.float) / grid_size,
         'demand': torch.tensor(demand, dtype=torch.float) / capacity,
         'depot': torch.tensor(depot, dtype=torch.float) / grid_size
     }
-
 
 class VRPDataset(Dataset):
     
